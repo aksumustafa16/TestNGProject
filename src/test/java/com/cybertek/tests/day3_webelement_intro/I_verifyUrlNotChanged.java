@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class verifyUrlNotChanged {
+public class I_verifyUrlNotChanged {
     public static void main(String[] args) {
 
         /**
@@ -30,6 +30,8 @@ public class verifyUrlNotChanged {
         }else{
             System.out.println("FAIL");
         }
+
+        driver.quit();
 
     }
 }
