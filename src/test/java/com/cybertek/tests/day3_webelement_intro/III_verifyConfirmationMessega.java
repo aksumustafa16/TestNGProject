@@ -38,5 +38,7 @@ public class III_verifyConfirmationMessega {
             System.out.println(expectedMessage);
             System.out.println(actualMessage);
         }
+
+        driver.quit();
     }
 }
