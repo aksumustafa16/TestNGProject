@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class XpathLocatorDemo {
+public class I_XpathLocatorDemo {
     public static void main(String[] args) {
         WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
