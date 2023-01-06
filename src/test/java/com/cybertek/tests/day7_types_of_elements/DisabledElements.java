@@ -17,4 +17,17 @@ public class DisabledElements {
         WebElement greenRadioButton = driver.findElement(By.id("green"));
         Assert.assertFalse(greenRadioButton.isEnabled(),"Verify green button is NOT enabled");
     }
+
+    @Test
+    public void test2(){
+        WebDriver driver = WebDriverFactory.getDriver("chrome");
+        driver.manage().window().maximize();
+        driver.get("http://practice.cybertekschool.com/dynamic_controls");
+
+        WebElement inputbox = driver.findElement(By.cssSelector("[type='text']"));
+        inputbox.sendKeys("Mike");
+
+
+
+    }
 }
