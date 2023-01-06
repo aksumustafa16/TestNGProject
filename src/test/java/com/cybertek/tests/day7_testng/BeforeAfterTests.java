@@ -1,8 +1,6 @@
 package com.cybertek.tests.day7_testng;
 
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class BeforeAfterTests {
 
@@ -16,6 +14,17 @@ public class BeforeAfterTests {
         //Close browser, quit
     }
 
+    @Ignore
+    @Test
+    public void test2(){
+        System.out.println("This is my test 2");
+    }
+
+    @Test
+    public void test3(){
+        System.out.println("This is my test 3");
+    }
+
     @BeforeMethod
     public void setUp(){
         System.out.println("BEFORE METHOD HERE");
@@ -26,5 +35,16 @@ public class BeforeAfterTests {
     public void tearDown(){
         System.out.println("AFTER METHOD HERE");
         System.out.println("Driver quit");
+    }
+
+    @BeforeClass
+    public void setUpClass(){
+        System.out.println("--BEFORE CLASS--");
+    }
+
+    @AfterClass
+    public void afterClass(){
+        System.out.println("--AFTER CLASS");
+        System.out.println("GENERATE REPORT");
     }
 }
