@@ -40,11 +40,13 @@ public class BeforeAfterTests {
     @BeforeClass
     public void setUpClass(){
         System.out.println("--BEFORE CLASS--");
+        System.out.println("RUNS ONLY ONE IN THE CLASS");
     }
 
     @AfterClass
     public void afterClass(){
         System.out.println("--AFTER CLASS");
+        System.out.println("RUNS ONLY ONE IN THE CLASS");
         System.out.println("GENERATE REPORT");
     }
 }
