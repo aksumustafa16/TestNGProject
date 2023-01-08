@@ -13,15 +13,23 @@ public class AttributeTest {
         WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.get("http://practice.cybertekschool.com/radio_buttons");
 
-        WebElement radiaButton = driver.findElement(By.id("blue"));
+        WebElement radioButton = driver.findElement(By.id("blue"));
 
         //get the value of type attribute
-        System.out.println(radiaButton.getAttribute("type"));
-        System.out.println(radiaButton.getAttribute("name"));
+        System.out.println(radioButton.getAttribute("type"));
+        System.out.println(radioButton.getAttribute("name"));
 
         //since checked attribute does not keep any value it will return true of false based on the condition
-        System.out.println(radiaButton.getAttribute("checked"));
+        System.out.println(radioButton.getAttribute("checked"));
 
+        //trying to get attribute does not exist
+        //when we use non exist attribute it will return NULL to us.
+        System.out.println(radioButton.getAttribute("outerHTML"));
+
+        driver.get("http://practice.cybertekschool.com/multiple_buttons");
+        WebElement button2 = driver.findElement(By.name("button2"));
+        System.out.println(button2.getAttribute("outerHTML"));
+        System.out.println(button2.getAttribute("innerHTML"));
 
 
     }
