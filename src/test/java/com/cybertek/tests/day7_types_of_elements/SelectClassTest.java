@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -30,6 +31,23 @@ public class SelectClassTest {
         for (WebElement option : options) {
             System.out.println(option.getText());
         }
+    }
 
+    @Test
+    public void test2(){
+        WebDriver driver = WebDriverFactory.getDriver("chrome");
+        driver.get("http://practice.cybertekschool.com/dropdown");
+
+        //first locate your dropdown just line any other webelement with unique locator
+        WebElement dropdownElement = driver.findElement(By.id("state"));
+
+        //second create Select object byu passing that element as a constructor
+        Select stateDropdown = new Select(dropdownElement);
+
+        //verify that first selection is Select a state
+        WebElement SelectAState = stateDropdown.getFirstSelectedOption();
+        Assert.assertEquals(SelectAState.getText(),"Select a State");
+
+        //HOW TO SELECT OPTIONS FROM DROPDOWN?
     }
 }
