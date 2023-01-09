@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
 public class NoSelectedDropdown {
     @Test
     public void test1(){
@@ -16,8 +18,15 @@ public class NoSelectedDropdown {
 
         //1. locate your dropdown just line any other webelement with unique locator
         WebElement dropdownElement = driver.findElement(By.id("dropdownMenuLink"));
+        dropdownElement.click();
 
-        //2. create Select object byu passing that element as a constructor
-        Select stateDropdown = new Select(dropdownElement);
+        List<WebElement> dropdownOptions = driver.findElements(By.className("dropdown-item"));
+
+        for (WebElement option : dropdownOptions) {
+            System.out.println(option.getText());
+        }
+
+        //click yahoo
+        dropdownOptions.get(2).click();
     }
 }
