@@ -34,7 +34,7 @@ public class SelectClassTest {
     }
 
     @Test
-    public void test2(){
+    public void test2() throws InterruptedException {
         WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.get("http://practice.cybertekschool.com/dropdown");
 
@@ -49,5 +49,11 @@ public class SelectClassTest {
         Assert.assertEquals(SelectAState.getText(),"Select a State");
 
         //HOW TO SELECT OPTIONS FROM DROPDOWN?
+        //1.SELECT USING VISIBLE TEXT
+        Thread.sleep(2000);
+        stateDropdown.selectByVisibleText("Virginia");
+
+        Thread.sleep(2000);
+        driver.quit();
     }
 }
