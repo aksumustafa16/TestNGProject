@@ -46,5 +46,11 @@ public class PopupsAndAlerts {
         Thread.sleep(2000);
         //click OK button on the alert
         alert.accept();
+
+        //locate and Click For JS Confirm button
+        driver.findElement(By.xpath("//button[2]")).click();
+
+        Thread.sleep(2000);
+        alert.dismiss();
     }
 }
