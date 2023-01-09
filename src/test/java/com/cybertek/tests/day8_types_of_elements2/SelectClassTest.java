@@ -1,4 +1,4 @@
-package com.cybertek.tests.day7_types_of_elements;
+package com.cybertek.tests.day8_types_of_elements2;
 
 import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
@@ -52,6 +52,27 @@ public class SelectClassTest {
         //1.SELECT USING VISIBLE TEXT
         Thread.sleep(2000);
         stateDropdown.selectByVisibleText("Virginia");
+
+        String expectedOption = "Virginia";
+        String actualOption = stateDropdown.getFirstSelectedOption().getText();
+        Assert.assertEquals(actualOption,expectedOption);
+
+        //2.SELECT USING INDEX
+        Thread.sleep(2000);
+        stateDropdown.selectByIndex(51);
+
+        expectedOption = "Wyoming";
+        actualOption = stateDropdown.getFirstSelectedOption().getText();
+        Assert.assertEquals(actualOption,expectedOption);
+
+        //SELECT BY VALUE
+        Thread.sleep(2000);
+        stateDropdown.selectByValue("IL");
+
+        expectedOption = "Illinois";
+        actualOption = stateDropdown.getFirstSelectedOption().getText();
+        Assert.assertEquals(actualOption,expectedOption);
+
 
         Thread.sleep(2000);
         driver.quit();

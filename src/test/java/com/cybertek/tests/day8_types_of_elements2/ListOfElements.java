@@ -1,4 +1,4 @@
-package com.cybertek.tests.day7_types_of_elements;
+package com.cybertek.tests.day8_types_of_elements2;
 
 import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
