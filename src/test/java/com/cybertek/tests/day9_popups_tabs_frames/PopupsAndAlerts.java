@@ -1,6 +1,7 @@
 package com.cybertek.tests.day9_popups_tabs_frames;
 
 import com.cybertek.utilities.WebDriverFactory;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -30,5 +31,20 @@ public class PopupsAndAlerts {
         //locate and click Confirm button
         driver.findElement(By.id("j_idt343:j_idt344")).click();
         driver.findElement(By.xpath("//button[.='Yes']")).click();
+    }
+
+    @Test
+    public void Alerts() throws InterruptedException {
+        driver.get("http://practice.cybertekschool.com/javascript_alerts");
+
+        //locate click the Click For JS alert button
+        driver.findElement(By.xpath("//button[1]")).click();
+
+        //switch to JS alert windows
+        Alert alert = driver.switchTo().alert();
+
+        Thread.sleep(2000);
+        //click OK button on the alert
+        alert.accept();
     }
 }
