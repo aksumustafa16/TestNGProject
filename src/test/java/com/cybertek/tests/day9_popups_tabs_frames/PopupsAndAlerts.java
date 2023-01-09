@@ -52,5 +52,11 @@ public class PopupsAndAlerts {
 
         Thread.sleep(2000);
         alert.dismiss();
+
+        //Click for JS Prompt
+        driver.findElement(By.xpath("//button[3]")).click();
+        alert.sendKeys("Mike Smith");
+        Thread.sleep(5000);
+        alert.accept();
     }
 }
