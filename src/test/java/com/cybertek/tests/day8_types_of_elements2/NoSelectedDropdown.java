@@ -1,10 +1,23 @@
 package com.cybertek.tests.day8_types_of_elements2;
 
+import com.cybertek.utilities.WebDriverFactory;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
 public class NoSelectedDropdown {
     @Test
     public void test1(){
 
+        WebDriver driver = WebDriverFactory.getDriver("chrome");
+        driver.get("http://practice.cybertekschool.com/dropdown");
+
+        //1. locate your dropdown just line any other webelement with unique locator
+        WebElement dropdownElement = driver.findElement(By.id("dropdownMenuLink"));
+
+        //2. create Select object byu passing that element as a constructor
+        Select stateDropdown = new Select(dropdownElement);
     }
 }

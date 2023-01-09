@@ -73,7 +73,6 @@ public class SelectClassTest {
         actualOption = stateDropdown.getFirstSelectedOption().getText();
         Assert.assertEquals(actualOption,expectedOption);
 
-
         Thread.sleep(2000);
         driver.quit();
     }
