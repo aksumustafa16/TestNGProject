@@ -7,6 +7,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.util.Set;
+
 public class MultipleWindows {
     WebDriver driver;
 
@@ -32,6 +34,25 @@ public class MultipleWindows {
         Thread.sleep(2000);
         System.out.println(driver.getTitle());
 
-        System.out.println("driver.getWindowHandle() = " + driver.getWindowHandle());
+        //System.out.println("driver.getWindowHandle() = " + driver.getWindowHandle());
+
+        String currentWindowHandle = driver.getWindowHandle();
+        System.out.println(currentWindowHandle);
+
+        //we will switch to new window
+        Set<String> windowHandles = driver.getWindowHandles();
+
+        System.out.println("windowHandles.size() = " + windowHandles.size());
+
+        for (String handle : windowHandles) {
+            if (!handle.equals(currentWindowHandle)) {
+                driver.switchTo().window(handle);
+            }
+        }
+        System.out.println("Title after switching window :" + driver.getTitle());
+
+        driver.switchTo().window(currentWindowHandle);
+        System.out.println(driver.getTitle());
+
     }
 }
