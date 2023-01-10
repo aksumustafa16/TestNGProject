@@ -55,4 +55,11 @@ public class MultipleWindows {
         System.out.println(driver.getTitle());
 
     }
+
+    @Test
+    public void moreThan2Windows(){
+        driver.get("http://practice.cybertekschool.com/windows");
+
+        Set<String> windowHandles = driver.getWindowHandles();
+    }
 }
