@@ -57,9 +57,25 @@ public class iframes {
         driver.findElement(By.id("tinymce")).clear();
         Thread.sleep(1000);
         driver.findElement(By.id("tinymce")).sendKeys("Mike Smith WITH WEBELEMENT");
+    }
 
+    @Test
+    public void test2(){
+        driver.get("http://practice.cybertekschool.com/nested_frames");
 
+        //switching to frame top
+        driver.switchTo().frame("frame-top");
+        //top has 3 children left middle right
+        driver.switchTo().frame("frame-middle");
+        System.out.println(driver.findElement(By.id("content")).getText());
 
+        //switch to right  frame
+        driver.switchTo().parentFrame();
+        driver.switchTo().frame(2);
+        System.out.println(driver.findElement(By.tagName("body")).getText());
 
+        driver.switchTo().defaultContent();
+        driver.switchTo().frame("frame-bottom");
+        System.out.println(driver.findElement(By.tagName("body")).getText());
     }
 }
