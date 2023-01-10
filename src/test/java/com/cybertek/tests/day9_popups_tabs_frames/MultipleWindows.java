@@ -57,9 +57,28 @@ public class MultipleWindows {
     }
 
     @Test
-    public void moreThan2Windows(){
+    public void moreThan2Windows() throws InterruptedException {
         driver.get("http://practice.cybertekschool.com/windows");
 
+        driver.findElement(By.xpath("//a[.='Click Here']")).click();
+
+
         Set<String> windowHandles = driver.getWindowHandles();
+
+        System.out.println("Before switch title: " + driver.getTitle());
+
+
+        //loop through each window
+        for (String handle : windowHandles) {
+            //one by one change it
+            driver.switchTo().window(handle);
+            //whenever your title equals to your expected window title
+            if (driver.getTitle().equals("New Window")){
+                //stop on that window
+                break;
+            }
+
+        }
+        System.out.println("After switch title: " + driver.getTitle());
     }
 }
