@@ -80,5 +80,7 @@ public class MultipleWindows {
 
         }
         System.out.println("After switch title: " + driver.getTitle());
+
+        System.out.println(driver.findElement(By.tagName("h3")).getText());
     }
 }
