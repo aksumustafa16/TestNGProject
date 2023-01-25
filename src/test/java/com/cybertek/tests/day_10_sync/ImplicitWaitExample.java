@@ -15,6 +15,8 @@ public class ImplicitWaitExample {
     @BeforeMethod
     public void setUpMethod(){
         driver = WebDriverFactory.getDriver("chrome");
+        //wait up to 20 second
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().window().maximize();
     }
 
@@ -27,9 +29,6 @@ public class ImplicitWaitExample {
     public void test1() {
 
         driver.get("http://practice.cybertekschool.com/dynamic_loading/4");
-
-        //wait up to 20 second
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         String message = driver.findElement(By.cssSelector("#finish>h4")).getText();
         System.out.println("message = " + message);
