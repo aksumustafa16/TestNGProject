@@ -35,10 +35,28 @@ public class FileUploadTest {
 
         driver.findElement(By.id("file-submit")).click();
 
-        WebElement text = driver.findElement(By.id("uploaded-files"));
-
-        String actualText = text.getText();
+        String actualText = driver.findElement(By.id("uploaded-files")).getText();
 
         Assert.assertEquals(actualText,"file.txt");
+    }
+
+    @Test
+    public void test2() throws InterruptedException {
+
+        driver.get("http://practice.cybertekschool.com/upload");
+
+        WebElement chooseFile = driver.findElement(By.id("file-upload"));
+
+        String projectPat = System.getProperty("user.dir");
+        String relativePath = "src/test/resources/textfile.txt";
+        String filePath = projectPat + "/" + relativePath;
+
+        chooseFile.sendKeys(filePath);
+
+        driver.findElement(By.id("file-submit")).click();
+
+        String actualText = driver.findElement(By.id("uploaded-files")).getText();
+
+        Assert.assertEquals(actualText,"textfile.txt");
     }
 }
