@@ -72,8 +72,52 @@ public class WebTablesExamples {
             WebElement row =  driver.findElement(By.xpath("//table[@id='table1']/tbody/tr[" + i + "]"));
             System.out.println(row.getText());
         }
+    }
 
+    @Test
+    public void getAllCellInOneRow(){
+        List<WebElement> allCellInOneRow = driver.findElements(By.xpath("//table[@id='table1']/tbody/tr[1]/td"));
+        for (WebElement cell : allCellInOneRow) {
+            System.out.println(cell.getText());
+        }
+    }
 
+    @Test
+    public void getASingleCellByIndex(){
+        WebElement singleCell = driver.findElement(By.xpath("//table[@id='table1']/tbody/tr[4]/td[5]"));
+        System.out.println(singleCell.getText());
+    }
 
+    @Test
+    public void PrintAllCellByIndex(){
+        int rowNumber = getNumberofRows();
+        int colNumber = getNumberofColumns();
+
+        System.out.println("colNumber = " + colNumber);
+        System.out.println("rowNumber = " + rowNumber);
+
+        //table[@id='table1']/tbody/tr[1]/td[1]
+
+        //iterate through each row on the table
+        for (int i = 1 ; i <= rowNumber ; i++) {
+            for (int j = 1; j <= colNumber ; j++) {
+
+                String cellXpath = "table[@id='table1']/tbody/tr[" + i + "]/td[" + j + "]";
+                System.out.println(cellXpath);
+
+                WebElement cell = driver.findElement(By.xpath(cellXpath));
+                System.out.println(cell.getText());
+            }
+        }
+    }
+
+    private int getNumberofColumns() {
+        List<WebElement> headers = driver.findElements(By.xpath("//table[@id='table1']//th"));
+        return headers.size();
+    }
+
+    private int getNumberofRows() {
+        List<WebElement> allRaws =  driver.findElements(By.xpath("//table[@id='table1']/tbody/tr"));
+        return allRaws.size();
     }
 }
