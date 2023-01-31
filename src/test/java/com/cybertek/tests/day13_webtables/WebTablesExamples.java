@@ -9,6 +9,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class WebTablesExamples {
@@ -25,7 +26,7 @@ public class WebTablesExamples {
     @AfterMethod
     public void afterMethod() throws InterruptedException {
         Thread.sleep(2000);
-        //driver.quit();
+        driver.quit();
     }
 
     @Test
@@ -36,6 +37,43 @@ public class WebTablesExamples {
     }
     @Test
     public void getAllHeaders() {
+        //How many column we have?
+        List<WebElement> headers = driver.findElements(By.xpath("//table[@id='table1']//th"));
+        System.out.println("headers.size() = " + headers.size());
+
+        for (WebElement header : headers) {
+            System.out.println(header.getText());
+        }
+    }
+
+    @Test
+    public void printTableSize(){
+        //How many column we have?
+        List<WebElement> headers = driver.findElements(By.xpath("//table[@id='table1']//th"));
+        System.out.println("headers.size() = " + headers.size());
+
+        //number of rows with headers
+       List<WebElement> allRawsWithHeader =  driver.findElements(By.xpath("//table[@id='table1']//tr"));
+        System.out.println(allRawsWithHeader.size());
+
+        //number of rows without header (we prefer this)
+        List<WebElement> allRawsWithoutHeader =  driver.findElements(By.xpath("//table[@id='table1']/tbody/tr"));
+        System.out.println(allRawsWithoutHeader.size());
+    }
+
+    @Test
+    public void getRow(){
+        WebElement firstRow =  driver.findElement(By.xpath("//table[@id='table1']/tbody/tr[2]"));
+        //System.out.println(firstRow.getText());
+
+        List<WebElement> allRaws =  driver.findElements(By.xpath("//table[@id='table1']/tbody/tr"));
+
+        for (int i = 1; i <= allRaws.size(); i++) {
+            WebElement row =  driver.findElement(By.xpath("//table[@id='table1']/tbody/tr[" + i + "]"));
+            System.out.println(row.getText());
+        }
+
+
 
     }
 }
