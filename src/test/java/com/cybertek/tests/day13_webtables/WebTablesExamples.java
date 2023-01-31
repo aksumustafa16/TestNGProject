@@ -102,10 +102,11 @@ public class WebTablesExamples {
         for (int i = 1 ; i <= rowNumber ; i++) {
             for (int j = 1; j <= colNumber ; j++) {
 
-                String cellXpath = "table[@id='table1']/tbody/tr[" + i + "]/td[" + j + "]";
-                System.out.println(cellXpath);
+                //String cellXpath = "table[@id='table1']/tbody/tr[" + i + "]/td[" + j + "]";
+                //System.out.println(cellXpath);
 
-                WebElement cell = driver.findElement(By.xpath(cellXpath));
+                WebElement cell = driver.findElement(By.xpath("//table[@id='table1']/tbody/tr["+i+"]/td["+j+"]"));
+                                                                            //table[@id='table1']/tbody/tr["+i+"]/td["+j+"]"
                 System.out.println(cell.getText());
             }
         }
