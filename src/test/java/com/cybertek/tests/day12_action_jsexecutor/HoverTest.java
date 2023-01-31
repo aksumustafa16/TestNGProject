@@ -53,17 +53,17 @@ public class HoverTest {
 
         for (int i = 1; i <= 3; i++) {
 
-            String imgXpath = "(//img)["+i+"]";
+            String imgXpath = "(//img)[" + i + "]";
 
-        WebElement img = driver.findElement(By.xpath(imgXpath));
+            WebElement img = driver.findElement(By.xpath(imgXpath));
 
-        Actions actions = new Actions(driver);
+            Actions actions = new Actions(driver);
 
-        actions.moveToElement(img).perform();
+            actions.moveToElement(img).perform();
 
-        WebElement text = driver.findElement(By.xpath("//h5[.='name: user" +i + "']"));
+            WebElement text = driver.findElement(By.xpath("//h5[.='name: user" + i + "']"));
 
-        Assert.assertTrue(text.isDisplayed(), "verify user" + i + " is displayed");
+            Assert.assertTrue(text.isDisplayed(), "verify user" + i + " is displayed");
 
         }
 
