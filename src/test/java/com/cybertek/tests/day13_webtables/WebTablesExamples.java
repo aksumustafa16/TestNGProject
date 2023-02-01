@@ -18,9 +18,10 @@ public class WebTablesExamples {
     @BeforeMethod
     public void setUpMethod(){
         driver = WebDriverFactory.getDriver("chrome");
+        driver.get("http://practice.cybertekschool.com/tables");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get("http://practice.cybertekschool.com/tables");
+
     }
 
     @AfterMethod
