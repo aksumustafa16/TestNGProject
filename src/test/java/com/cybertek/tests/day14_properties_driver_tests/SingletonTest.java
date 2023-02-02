@@ -7,34 +7,33 @@ import org.testng.annotations.Test;
 
 public class SingletonTest {
     @Test
-    public void test(){
+    public void test() {
 
         String s1 = Singleton.getInstance();
         String s2 = Singleton.getInstance();
 
         System.out.println("s1 = " + s1);
-        System.out.println("s2 = " + s2);
+        System.out.println("s2 = " +  s2);
     }
 
     @Test
-    public void test1(){
+    public void test1() {
 
-        WebDriver driver = Driver.get();
+        //WebDriver driver = Driver.get();
 
-        driver.get("https://www.google.com");
+        Driver.get().get("https://www.google.com");
 
-        Driver.closeDriver();
+        //Driver.closeDriver();
+
 
     }
 
     @Test
-    public void test2(){
+    public void test2() {
 
-        WebDriver driver = Driver.get();
+        Driver.get().get("https://www.amazon.com");
 
-        driver.get("https://www.amazon.com");
-
-        Driver.closeDriver();
+        //Driver.closeDriver();
 
     }
 }
