@@ -403,4 +403,5 @@ public class BrowserUtils {
 
     public static void waitForClickablility(By xpath, Duration ofSeconds) {
     }
+
 }
