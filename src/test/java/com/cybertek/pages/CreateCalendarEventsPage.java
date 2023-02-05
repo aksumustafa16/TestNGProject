@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 
 public class CreateCalendarEventsPage extends BasePage {
 
-    public CreateCalendarEventsPage(){
+    public CreateCalendarEventsPage() {
         PageFactory.initElements(Driver.get(), this);
     }
 
@@ -51,9 +51,7 @@ public class CreateCalendarEventsPage extends BasePage {
     @FindBy(xpath = "(//input[@type='radio'])[5]")
     public WebElement by;
 
-    public Select repeatOptionsList(){
+    public Select repeatOptionsList() {
         return new Select(repeatOptions);
     }
-
-
 }

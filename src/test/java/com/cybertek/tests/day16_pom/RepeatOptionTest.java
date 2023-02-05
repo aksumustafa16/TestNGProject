@@ -56,15 +56,18 @@ public class RepeatOptionTest extends TestBase {
 
         List<WebElement> actualOptions = repeatDropdown.getOptions();
 
-        List<String> actualList = new ArrayList<>();
+//        List<String> actualList = new ArrayList<>();
 
-        for (WebElement option : actualOptions) {
+//        for (WebElement option : actualOptions) {
+//
+//           actualList.add( option.getText());
+//
+//        }
 
-           actualList.add( option.getText());
+        //getting list with ready method
+        List<String> actualList2 = BrowserUtils.getElementsText(actualOptions);
 
-        }
-
-        Assert.assertEquals(actualList,expectedList,"verify dropdown options");
+        Assert.assertEquals(actualList2,expectedList,"verify dropdown options");
 
     }
 }

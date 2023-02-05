@@ -10,8 +10,9 @@ public class FIlePathExample {
         // C:\Users\aksumustafa16\IdeaProjects\TestNGProject\src\test\resources\textfile.txt
 
         String projectPat = System.getProperty("user.dir");
-        String relativePath = "src/test/resources/textfile.txt";
-        String filePath = projectPat + "/" + relativePath;
+        System.out.println(projectPat);
+        //String relativePath = "src/test/resources/textfile.txt";
+        //String filePath = projectPat + "/" + relativePath;
 
     }
 }
