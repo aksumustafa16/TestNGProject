@@ -2,7 +2,6 @@ package com.cybertek.tests.day17_extent_reports;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.reporter.ExtentReporter;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
