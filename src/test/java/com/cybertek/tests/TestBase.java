@@ -29,7 +29,7 @@ public class TestBase {
     protected ExtentTest extentLogger;
 
     @BeforeTest
-    public void setUpTest(){
+    public void setUpTest() {
         //initialize the class
         report = new ExtentReports();
         //create a report path
@@ -46,10 +46,10 @@ public class TestBase {
         htmlReporter.config().setReportName("Vytrack Smmoke Test");
 
         //set environment information
-        report.setSystemInfo("Environment","QA");
-        report.setSystemInfo("Browser",ConfigurationReader.get("browser"));
-        report.setSystemInfo("Tester","Cybertek Testers");
-        report.setSystemInfo("OS",System.getProperty("os.name"));
+        report.setSystemInfo("Environment", "QA");
+        report.setSystemInfo("Browser", ConfigurationReader.get("browser"));
+        report.setSystemInfo("Tester", "Cybertek Testers");
+        report.setSystemInfo("OS", System.getProperty("os.name"));
     }
 
     @BeforeMethod
@@ -67,7 +67,7 @@ public class TestBase {
     @AfterMethod
     public void afterMethod(ITestResult result) throws InterruptedException, IOException {
         //if test failed
-        if(result.getStatus()== ITestResult.FAILURE){
+        if (result.getStatus() == ITestResult.FAILURE) {
             //record the name of failed test case
             extentLogger.fail(result.getName());
 
@@ -88,7 +88,7 @@ public class TestBase {
     }
 
     @AfterMethod
-    public void teardown(){
+    public void teardown() {
         //this is when the report is actually created
         report.flush();
     }

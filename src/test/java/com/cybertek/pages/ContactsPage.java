@@ -1,11 +1,12 @@
 package com.cybertek.pages;
 
+import com.cybertek.tests.TestBase;
 import com.cybertek.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class ContactPage extends BasePage {
+public class ContactsPage extends BasePage {
 
     //since we are extending BasePage we do not need explicit constructor for this class
 

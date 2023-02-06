@@ -64,7 +64,7 @@ public abstract class BasePage {
 
     public String getUserName(){
         waitUntilLoaderScreenDisappear();
-        BrowserUtils.waitForVisibility(userName, 5);
+        BrowserUtils.waitForVisibility(userName, 15);
         return userName.getText();
     }
 

@@ -44,5 +44,7 @@ public class NegativeLoginTestWithReport extends TestBase {
         Assert.assertTrue(driver.getCurrentUrl().equals("https://qa3.vytrack.com/user/loginN"));
 
         extentLogger.info("PASS: Wrong Password Test");
+
+
     }
 }
