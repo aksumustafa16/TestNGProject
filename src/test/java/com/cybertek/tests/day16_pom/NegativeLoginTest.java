@@ -6,9 +6,10 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class NegativeLoginTest extends TestBase {
-    LoginPage loginPage = new LoginPage();
     @Test
     public void wrongPasswordTest() {
+
+        LoginPage loginPage = new LoginPage();
 
         loginPage.usernameInput.sendKeys("User1");
         loginPage.passwordInput.sendKeys("samepassword");
@@ -18,6 +19,9 @@ public class NegativeLoginTest extends TestBase {
 
     @Test
     public void wrongUsernameTest(){
+
+        LoginPage loginPage = new LoginPage();
+
         loginPage.usernameInput.sendKeys("someusername");
         loginPage.passwordInput.sendKeys("UserUser123");
         loginPage.loginBtn.click();
