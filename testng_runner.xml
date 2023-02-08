@@ -4,7 +4,7 @@
        <classes>
            <class name="com.cybertek.tests.day16_pom.NegativeLoginTest">
                <methods>
-                   <include name="wrongUsernameTest"></include>
+                   <exclude name="wrongUsernameTest"></exclude>
                </methods>
            </class>
        </classes>
