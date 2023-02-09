@@ -25,7 +25,7 @@ public class TestBase {
     protected static ExtentSparkReporter htmlReporter;
     //this will define a test, enables adding logs, authors, test steps
     protected static ExtentTest extentLogger;
-    protected  String url;
+    protected String url;
 
     @BeforeTest
     public void setUpTest() {
@@ -54,15 +54,16 @@ public class TestBase {
     @BeforeMethod
     @Parameters("env")
     public void setUpMethod(@Optional String env) {
+        System.out.println("env: " + env);
 
         //if env variable is null use default url
         if (env == null) {
-            url=ConfigurationReader.get("url");
-        }else{
-            url=ConfigurationReader.get(env+"_url");
+            url = ConfigurationReader.get("url");
+        } else {
+            url = ConfigurationReader.get(env + "_url");
         }
-        //if it is not null, choose env based on value
-        System.out.println("env: " + env);
+        //if is not null, choose env based on value
+        System.out.println(env + "_url");
         driver = Driver.get();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
