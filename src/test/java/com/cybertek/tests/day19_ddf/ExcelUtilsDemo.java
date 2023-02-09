@@ -3,18 +3,19 @@ package com.cybertek.tests.day19_ddf;
 import com.cybertek.utilities.ExcelUtil;
 import org.testng.annotations.Test;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
 public class ExcelUtilsDemo {
     @Test
-    public void readExcelFile(){
+    public void readExcelFile() {
         //create an object from ExcelUtil
         //it accepts two argument
         //Argument 1: location of the file(path)
         //Argument 2: sheet that we want to open(sheetName)
 
-        ExcelUtil qa3short = new ExcelUtil("src/test/resources/Vytracktestdata.xlsx","Sheet1");
+        ExcelUtil qa3short = new ExcelUtil("src/test/resources/Vytracktestdata.xlsx", "Sheet1");
 
         System.out.println("qa3short.rowCount() = " + qa3short.rowCount());
         System.out.println("qa3short.columnCount() = " + qa3short.columnCount());
@@ -26,7 +27,13 @@ public class ExcelUtilsDemo {
             System.out.println(onerow);
         }
 
+        //get all data in 2d array
+        String[][] dataArray = qa3short.getDataArray();
+        //print 2d array
+        System.out.println(Arrays.deepToString(dataArray));
 
+        System.out.println("qa3short.getCellData(9,3) = " + qa3short.getCellData(9, 3));
+        System.out.println(dataList.get(8).get("lastname"));
     }
 
 }
